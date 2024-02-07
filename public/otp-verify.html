@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="../css/otp.css">
+</head>
+
+<body>
+    <div id="loginForm">
+        <div class="centering">
+            <form class="my-form" onsubmit="return verifyOTP();">
+                <div class="login-welcome-row">
+                    <h1>OTP Verification</h1>
+                </div>
+                <div class="otp-container">
+                    <input type="text" maxlength="1" class="otp-box" id="otp1" oninput="moveToNext(this, 'otp2')" required>
+                    <input type="text" maxlength="1" class="otp-box" id="otp2" oninput="moveToNext(this, 'otp3')" required>
+                    <input type="text" maxlength="1" class="otp-box" id="otp3" oninput="moveToNext(this, 'otp4')" required>
+                    <input type="text" maxlength="1" class="otp-box" id="otp4" oninput="moveToNext(this)" required>
+                </div>
+                <div>
+                    <button class="bubbly-button1">Verify OTP</button>
+                </div>
+                <div class="my-form__row3">
+                    <span>Did you not receive the OTP?</span>
+                    <a href="./otp-verify.html" title="Resend OTP" id="resendotp">Resend OTP</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function moveToNext(currentInput, nextInputId) {
+            const maxLength = parseInt(currentInput.getAttribute('maxlength'));
+            const currentLength = currentInput.value.length;
+
+            if (currentLength === maxLength) {
+                if (nextInputId) {
+                    const nextInput = document.getElementById(nextInputId);
+                    if (nextInput) {
+                        nextInput.focus();
+                    }
+                } else {
+                    currentInput.blur(); // Optionally blur the last input
+                }
+            }
+        }
+
+        function verifyOTP() {
+            const enteredOTP = document.getElementById('otp1').value +
+                document.getElementById('otp2').value +
+                document.getElementById('otp3').value +
+                document.getElementById('otp4').value;
+
+            // Check if entered OTP matches the expected OTP
+            if (enteredOTP === expectedOTP) {
+                // Redirect to Google.com
+                window.location.href = 'https://www.google.com';
+            } else {
+                // Display an alert for invalid OTP
+                alert('Invalid OTP. Please try again.');
+            }
+
+            return false; // Prevent form submission for testing purposes
+        }
+    </script>
+    <script src="../js/login.js"></script>
+    <script src="../js/otp-send.js"></script>
+</body>
+
+</html>

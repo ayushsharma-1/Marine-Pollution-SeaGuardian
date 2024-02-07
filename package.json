@@ -1,0 +1,23 @@
+{
+  "name": "login",
+  "version": "1.0.0",
+  "description": "",
+  "main": "data.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/storage": "^7.7.0",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security",
+    "install": "^0.13.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.9",
+    "nodemon": "^3.0.3",
+    "path": "^0.12.7"
+  }
+}
