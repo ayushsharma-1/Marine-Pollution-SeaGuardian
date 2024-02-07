@@ -3,13 +3,13 @@
         import { GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/10.7.2/firebase-auth.js";
 
         const firebaseConfig = {
-            apiKey: "AIzaSyAjzzE9G53NisbxWA8D4DTgPx5cFnGqjZQ",
-            authDomain: "sea-guardian-412209.firebaseapp.com",
-            projectId: "sea-guardian-412209",
-            storageBucket: "sea-guardian-412209.appspot.com",
-            messagingSenderId: "757450204746",
-            appId: "1:757450204746:web:79894359eb7646afd1e8b3",
-            measurementId: "G-99TVSE54R6"
+            apiKey: "",
+            authDomain: "",
+            projectId: "",
+            storageBucket: "",
+            messagingSenderId: "",
+            appId: "",
+            measurementId: ""
           };
 
         const app = initializeApp(firebaseConfig);

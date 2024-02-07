@@ -17,8 +17,8 @@ const port = 4000;
 
 // Set up GCS client
 const storage = new Storage({
-  keyFilename: '.sea-guardian-412209-2e0e2a4a7099.json',
-  projectId: 'sea-guardian-412209',
+  keyFilename: '',
+  projectId: '',
 });
 
 // Set your GCS bucket name

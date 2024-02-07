@@ -14,8 +14,8 @@ app.use(express.static('public'));
 
 // Set up GCS client
 const storage = new Storage({
-    keyFilename: process.env['sea-guardian-412209-2e0e2a4a7099.json'],
-    projectId: process.env['sea-guardian-412209'],
+    keyFilename: process.env[''],
+    projectId: process.env[''],
 });
 
 // Set your GCS bucket name
