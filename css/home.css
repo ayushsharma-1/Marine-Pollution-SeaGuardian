@@ -47,15 +47,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 30px 10px 30px;
+    padding: 0px 70px 0px 70px;
 }
 
-/* header logo */
-header .logo {
-    background-color: rgb(160, 165, 116);
-}
-
-header .logo img {
+header img {
     height: 100px;
 }
 
