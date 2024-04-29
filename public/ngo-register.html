@@ -9,59 +9,60 @@
 <body>
 <div id="ngoRegistrationForm">
     <div class="centering">
-        <form class="my-form">
+        <form class="my-form" action="/RegisterNGO" method="POST">
             <div class="login-welcome-row">
                 <h1>NGO Registration</h1>
             </div>
             <!-- NGO Registration Form Fields -->
             <div class="form-group">
-                <label for="ngo-name">NGO Name:</label>
+                <label for="ngoName">NGO Name:</label>
                 <input
                     aria-label="NGO Name"
                     type="text"
-                    id="ngo-name"
-                    name="ngo-name"
+                    id="ngoName"
+                    name="ngoName"
                     placeholder="Enter NGO Name"
                     required
                 />
             </div>
             <div class="form-group">
-                <label for="ngo-address-line1">Address Line 1:</label>
+                <label for="addressLine1">Address Line 1:</label>
                 <input
-                    id="ngo-address-line1"
-                    type="text"
-                    aria-label="Address Line 1"
-                    name="ngo-address-line1"
-                    placeholder="Address Line 1"
-                    required
-                />
+    id="addressLine1"
+    type="text"
+    aria-label="Address Line 1"
+    name="addressLine1"
+    placeholder="Address Line 1"
+    required
+/>
             </div>
             <div class="form-group">
-                <label for="ngo-address-line2">Address Line 2 (Location, City, Postal Code):</label>
+                <label for="addressLine2">Address Line 2 (Location, City, Postal Code):</label>
                 <input
-                    id="ngo-address-line2"
-                    type="text"
-                    aria-label="Address Line 2"
-                    name="ngo-address-line2"
-                    placeholder="Location, City, Postal Code"
-                    required
-                />
+    id="addressLine2"
+    type="text"
+    aria-label="Address Line 2"
+    name="addressLine2"
+    placeholder="Location, City, Postal Code"
+    required
+/>
             </div>
             <div class="form-group">
-                <label for="ngo-reg-no">Registration No.:</label>
+                <label for="registrationNo">Registration No.:</label>
                 <input
-                    id="ngo-reg-no"
+                    id="registrationNo"
                     type="text"
                     aria-label="NGO Registration No."
-                    name="ngo-reg-no"
+                    name="registrationNo"
                     placeholder="Enter Registration No."
-                    required/>
+                    required
+                />
             </div>
             <div class="form-group">
-                <label for="working-areas">Working Areas:</label>
+                <label for="workingAreas">Working Areas:</label>
                 <textarea
-                    id="working-areas"
-                    name="working-areas"
+                    id="workingAreas"
+                    name="workingAreas"
                     placeholder="Enter Working Areas"
                     rows="1"
                     maxlength="50"
@@ -79,22 +80,19 @@
                     required
                 ></textarea>
             </div>
-        </form>
     </div>
     <div>
-        <!-- You can add a button here to submit the NGO registration form -->
-        <button class="bubbly-button" onclick="submitNGORegistrationForm()">Submit</button>
+        <button class="bubbly-button" type="submit">Submit</button>
     </div>
+</form>
     <div class="my-form__row2">
         <span>If You are a User</span>
-        <a href="sighnup.html" title="Reset Password">Register Here</a>
+        <a href="signup.html" title="Register Here">Register Here</a>
       </div>
 </div>
-
 <footer>
     <a href="home.html">Go to Home</a>
 </footer>
-<!-- You can include your login.js script here -->
 <script src="../js/login.js"></script>
 </body>
 </html>

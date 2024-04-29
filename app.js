@@ -7,6 +7,8 @@ const mongoose = require('mongoose');
 const fs = require("fs");
 const path = require("path");
 const nodemailer = require("nodemailer");
+const Reports = require('./src/models/details');
+const NGORegistration = require('./src/models/registerNGO');
 
 const app = express();
 const port = process.env.PORT || 4000;
@@ -14,16 +16,21 @@ const port = process.env.PORT || 4000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
+
 
 // Database Connection
 const connectDB = require('./src/db/connect');
-connectDB();
+const { Console } = require('console');
+connectDB("Sea_Guardian");
+
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "home.html"));
 });
-const pages = ["donate", "latest", "ourProgram", "ngo-register", "captivity", "extinct", "index", "fishery", "pollution", "shark", "whaling", "reset-password", "otp-verify"];
+
+const pages = ["donate", "latest", "ourProgram", "ngo-register", "captivity", "extinct", "details", "fishery", "pollution", "shark", "whaling", "reset-password", "otp-verify"];
 pages.forEach(page => {
     app.get(`/${page}`, (req, res) => {
         res.sendFile(path.join(__dirname, "public", `${page}.html`));
@@ -41,7 +48,7 @@ cssFiles.forEach(file => {
 
 
 // Route to serve JS files
-const jsFiles = ["login", "firebase", "actionstorage", "data", "otp-send", "ourProgram", "action","2fury.min.js"];
+const jsFiles = ["login", "firebase", "data", "otp-send", "ourProgram", "action","2fury.min.js"];
 jsFiles.forEach(file => {
     app.get(`/js/${file}.js`, (req, res) => {
         res.sendFile(path.join(__dirname, "js", `${file}.js`));
@@ -121,18 +128,59 @@ assetFiles.forEach((file) => {
 
 
 
-app.post("/submitNGORegistrationForm", (req, res) => {
-    const ngoName = req.body.ngoName;
-    const jsonData = JSON.stringify(req.body);
-    if (!fs.existsSync("data")) {
-        fs.mkdirSync("data");
+app.post('/Report', async (req, res) => {
+    try {
+      const { name, date, address, contact, email, locationPollution, typeOfPollution, areaOfPollution, polybagsPresent, image, latitude, longitude } = req.body;
+      const report = new Reports({
+        name,
+        date,
+        address,
+        contact,
+        email,
+        locationPollution,
+        typeOfPollution,
+        areaOfPollution,
+        polybagsPresent,
+        image,
+        latitude,
+        longitude
+      });
+
+      const savedReport = await report.save();
+      
+      res.status(201).json(savedReport); 
+    } catch (err) {
+      console.error(err);
+      res.status(400).json({ message: 'Failed to save the report.' }); 
     }
+  });
 
-    const filePath = `data/${ngoName}.json`;
-    fs.writeFileSync(filePath, jsonData);
+  app.post('/RegisterNGO', async (req, res) => {
+    try {
+        const existingUser = await NGORegistration.findOne({ registrationNo: req.body.registrationNo });
+        if (existingUser) {
+            console.log("user exist")
+            console.log({ error: "Registration Number already exists." });
+        }
+        const newNGORegistration = new NGORegistration({
+            ngoName: req.body.ngoName,
+            Address: {
+                addressLine1: req.body.addressLine1,
+                addressLine2: req.body.addressLine2
+            },
+            registrationNo: req.body.registrationNo,
+            workingAreas: req.body.workingAreas,
+            purpose: req.body.purpose
+        });
 
-    res.json({ message: "NGO registration data saved successfully." });
+        const registered = await newNGORegistration.save();
+        res.status(201).redirect("home.html");
+    } catch (error) {
+        console.error(error);
+        res.status(500).send("Registration failed. Please try again later.");
+    }
 });
+
 
 app.post("/otp-verify", (req, res) => {
     const userEmail = req.body.userEmail;
