@@ -7,9 +7,8 @@
   <title>Report Incident - SeaGuardian</title>
   <link rel="shortcut icon" href="../assets/SeaGuardian Favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="../css/action.css">
-  <!-- <script
-    src="https://maps.googleapis.com/maps/api/js?key=&libraries=places&callback=initMap" async defer>
-  </script> -->
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
 </head>
 
 <body>
@@ -77,7 +76,8 @@
             <label for="location-pollution">Location of Pollution:</label>
             <input type="text" id="location-pollution" name="locationPollution" placeholder="Location" required autocomplete="on" onchange="showLocationOnMap()" />
         </div>
-    
+        <div id="map"></div>
+        
         <div class="form-field">
             <label for="type-of-pollution">Type of Pollution:</label>
             <select id="type-of-pollution" name="typeOfPollution" required>

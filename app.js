@@ -48,7 +48,7 @@ cssFiles.forEach(file => {
 
 
 // Route to serve JS files
-const jsFiles = ["login", "firebase", "data", "otp-send", "ourProgram","latest", "action","2fury.min.js"];
+const jsFiles = ["login", "firebase", "actionstorage", "data", "otp-send", "ourProgram", "action","2fury.min.js","latest"];
 jsFiles.forEach(file => {
     app.get(`/js/${file}.js`, (req, res) => {
         res.sendFile(path.join(__dirname, "js", `${file}.js`));

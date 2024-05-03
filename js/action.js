@@ -55,103 +55,54 @@ function submitForm() {
 
  alert('Form submitted!');
 }
-  let map, marker;
+var map;
+var marker;
+
+//initialize map
 function initMap() {
-    var defaultLocation = new google.maps.LatLng(28.6139, 77.2090);
+    map = L.map('map').setView([0, 0], 8);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
 
-    map = new google.maps.Map(document.getElementById('map'), {
-        center: defaultLocation,
-        zoom: 12
-    });
+    marker = L.marker([0, 0], { draggable: true }).addTo(map);
 
-    marker = new google.maps.Marker({
-        map,
-        draggable: true,
-        position: defaultLocation
-    });
-
-    const autocomplete = new google.maps.places.Autocomplete(document.getElementById('location-pollution'));
-
-    autocomplete.addListener('place_changed', () => {
-        const place = autocomplete.getPlace();
-        if (!place.geometry) {
-            return;
-        }
-
-        const location = place.geometry.location;
-        marker.setPosition(location);
-    });
-
-    google.maps.event.addListener(map, 'click', (event) => {
-        marker.setPosition(event.latLng);
+    marker.on('dragend', function(event) {
+        var latLng = event.target.getLatLng();
+        
+        reverseGeocode(latLng);
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    initMap();
-});
+//reverse geocode and update input box
+function reverseGeocode(latLng) {
+    var geocodeUrl = 'https://us1.locationiq.com/v1/reverse.php?key=pk.218d61e8d1c8e963e038327efa25f8e5&lat=' + latLng.lat + '&lon=' + latLng.lng + '&format=json';
 
+    fetch(geocodeUrl)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('location-pollution').value = data.display_name;
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}
+
+//show location on map
 function showLocationOnMap() {
-    const locationInput = document.getElementById('location-pollution').value;
+    var location = document.getElementById('location-pollution').value;
+    var geocodeUrl = 'https://us1.locationiq.com/v1/search.php?key=pk.218d61e8d1c8e963e038327efa25f8e5&q=' + location + '&format=json';
 
-    const geocoder = new google.maps.Geocoder();
-    const markerPosition = marker.getPosition();
-    geocoder.geocode({ address: locationInput }, function (results, status) {
-        if (status === 'OK' && results && results[0] && results[0].geometry && results[0].geometry.location) {
-            const location = results[0].geometry.location;
+    fetch(geocodeUrl)
+        .then(response => response.json())
+        .then(data => {
+            if (data.length > 0) {
+                var lat = parseFloat(data[0].lat);
+                var lon = parseFloat(data[0].lon);
 
-            map.setCenter(location);
-            marker.setPosition(location);
-        } else {
-            console.error('Error geocoding address:', status);
-        }
-    });
-    geocoder.geocode({ location: markerPosition }, function (results, status) {
-        if (status === 'OK' && results && results[0]) {
-            const address = results[0].formatted_address;
-            const locationInput = document.getElementById('location-pollution');
-            locationInput.value = address;
-            const event = new Event('change');
-            locationInput.dispatchEvent(event);
-        } else {
-            console.error('Error reverse geocoding location:', status);
-        }
-    });
+                map.setView([lat, lon], 8);
+
+                marker.setLatLng([lat, lon]);
+            }
+        })
+        .catch(error => console.error('Error fetching data:', error));
 }
-function gatherFormData() {
-    const form = document.getElementById('report-form');
-  
-    const userName = form.elements['userName'].value;
-    const date = form.elements['date'].value;
-    const address = form.elements['address'].value;
-    const contact = form.elements['contact'].value;
-    const email = form.elements['email'].value;
-    const pollutionLocation = form.elements['location-pollution'].value;
-    const latitude = form.elements['latitude'].value;
-    const longitude = form.elements['longitude'].value;
-    const pollutionType = form.elements['pollution'].value;
-    const areaOfPollution = form.elements['pollution-area'].value;
-    const polybagsPresent = form.elements['polybags-present'].value;
-  
-    return {
-      userName,
-      date,
-      address,
-      contact,
-      email,
-      pollutionLocation,
-      latitude,
-      longitude,
-      pollutionType,
-      areaOfPollution,
-      polybagsPresent
-    };
-  }
-  
-function submitForm() {
-     alert('Form submitted!');
-    const formData = gatherFormData();
-    showLocationOnMap();
-    saveFormData(formData);
-  }
-  
+window.onload = initMap;
