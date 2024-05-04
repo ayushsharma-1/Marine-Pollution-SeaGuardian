@@ -30,7 +30,7 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "home.html"));
 });
 
-const pages = ["donate", "latest", "ourProgram", "ngo-register", "captivity", "extinct", "details", "fishery", "pollution", "shark", "whaling", "reset-password", "otp-verify"];
+const pages = ["donate", "latest", "ourProgram", "ngo-register", "captivity", "extinct", "details", "fishery", "pollution", "shark", "whaling", "reset-password", "otp-verify", "ques1", "ques2", "ques3", "ques4", "ques5", "FAQs"];
 pages.forEach(page => {
     app.get(`/${page}`, (req, res) => {
         res.sendFile(path.join(__dirname, "public", `${page}.html`));
@@ -39,7 +39,7 @@ pages.forEach(page => {
 
 
 // Route to serve CSS files
-const cssFiles = ["login", "otp", "profile", "donate", "home", "ourProgram", "theLatest", "style", "style2", "action"];
+const cssFiles = ["login", "otp", "profile", "donate", "home", "ourProgram", "theLatest", "style", "style2", "action"," faqs", "ques.css"];
 cssFiles.forEach(file => {
     app.get(`/css/${file}.css`, (req, res) => {
         res.sendFile(path.join(__dirname, "css", `${file}.css`));
@@ -48,7 +48,7 @@ cssFiles.forEach(file => {
 
 
 // Route to serve JS files
-const jsFiles = ["login", "firebase", "actionstorage", "data", "otp-send", "ourProgram", "action","2fury.min.js","latest"];
+const jsFiles = ["login", "firebase", "data", "otp-send", "ourProgram","latest", "action","2fury.min.js"];
 jsFiles.forEach(file => {
     app.get(`/js/${file}.js`, (req, res) => {
         res.sendFile(path.join(__dirname, "js", `${file}.js`));
@@ -117,6 +117,18 @@ const assetFiles = [
     "shark_3.png",
     "shark_4.png",
     "shark_5.png",
+    "ques1img1.png",
+    "ques1img2.png",
+    "ques2img1.png",
+    "ques2img2.png",
+    "ques2img3.png",
+    "ques3img1.png",
+    "ques3img2.png",
+    "ques4img1.png",
+    "ques4img2.png",
+    "ques5img1.png",
+    "ques5img2.png",
+    "ques5img3.png"
 ];
 
 assetFiles.forEach((file) => {
