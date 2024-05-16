@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequently Asked Question(FAQs)</title>
+
+    <link rel="shortcut icon" href="../assets/SeaGuardian Favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/faqs.css">
+</head>
+
+<body>
+    <header>
+        <a href="home.html">
+            <img src="../assets/SeaGuardian Logo.png" alt="">
+        </a>
+        <ul>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="ourProgram.html">Our Program</a></li>
+            <li><a href="action.html">Take Action</a></li>
+        </ul>
+        <div class="donate">
+            <li><a href="latest.html">The Latest</a></li>
+            <a href="donate.html">
+                <button class="shadow__btn" style="color: black;">Donate</button>
+            </a>
+            <a href="login.html"> <!-- Change to login page -->
+                <button class="shadow__btn login">Login</button>
+            </a>
+        </div>
+    </header>
+
+    <hr>
+
+    <main>
+        <div class="faq">
+            <div class="title">
+                <h2>Frequently Asked Question (FAQs)</h2>
+                <hr style="margin-top: 25px;">
+            </div>
+            <div class="q_a">
+                <p><a href="ques1.html">How To Donate?</a></p>
+                <p><a href="ques2.html">How To Register As An Individual?</a></p>
+                <p><a href="ques3.html">How Can We Connect With An NGO?</a></p>
+                <p><a href="ques4.html">How To Register As An NGO?</a></p>
+                <p><a href="ques5.html">How To Report An Accident?</a></p>
+            </div>
+        </div>
+
+        <section class="section__support" id="support">
+            <h3>Submit a Request</h3>
+            <p>Fill the form below to let us know about the problem you are facing.</p>
+            <form class="frm">
+                <div class="form__group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form__group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form__group">
+                    <label for="problem">Problem:</label>
+                    <select id="problem" name="problem" required>
+                        <option value="">Select the option that you are facing the problem in</option>
+                        <option value="problem1">Donation</option>
+                        <option value="problem2">Registration</option>
+                        <option value="problem3">Login</option>
+                        <option value="problem3">NGOs links not working</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <label for="message">Description:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <div class="form__group">
+                    <label for="attachment">Attachment:</label>
+                    <input type="file" id="attachment" name="attachment">
+                </div>
+                <input type="submit" class="sub__btn" value="Submit">
+            </form>
+        </section>
+
+        <div class="thank-u">
+            <h1>Thank You For Visiting Us. Hope This Will Help You :)</h1>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-wrapper">
+            <section class="footer-top">
+                <div class="footer-headline">
+                    <h2>Donate to make Pollution Free Marine</h2>
+                    <p>
+                        Stay up to date with our news and articles
+                    </p>
+                </div>
+                <div class="footer-subscribe">
+                    <a href="donate.html">
+                        <button id="donate">
+                            Donate
+                        </button>
+                    </a>
+                </div>
+            </section>
+            <div class="footer-columns">
+                <section class="footer-logo">
+                    <img src="../assets/logo 1.png" alt="SeaGuardian">
+                </section>
+                <section>
+                    <h3>Product</h3>
+                    <ul>
+                        <li>
+                            <a href="action.html" title="API">Take Action</a>
+                        </li>
+                        <li>
+                            <a href="donate.html" title="Pricing">Donation</a>
+                        </li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Resources</h3>
+                    <ul>
+                        <li>
+                            <a href="latest.html" title="Support">Latest Works</a>
+                        </li>
+                        <li>
+                            <a href="ourProgram.html" title="Sitemap">Our Programs</a>
+                        </li>
+                        <li>
+                            <a href="./FAQs.html" title="Sitemap">FAQs</a>
+                          </li>
+                    </ul>
+                </section>
+            </div>
+            <div class="footer-bottom">
+                <small>© SeaGuardian <span id="year"></span>, All rights reserved</small>
+                <span class='social-links'>
+                    <a href="#" title="Instagram">
+                        <img src="../assets/instagram.svg" alt='Instagram'>
+                    </a>
+                    <a href="#" title="Linkedin">
+                        <img src="../assets/linkedin.svg" alt='Linkedin'>
+                    </a>
+                    <a href="#" title="Twitter">
+                        <img src="../assets/twitter.svg" alt='Twitter'>
+                    </a>
+                    <a href="#" title="Youtube">
+                        <img src="../assets/youtube.svg" alt='YouTube'>
+                    </a>
+                    <a href="#" title="GitHub">
+                        <img src="../assets/github.svg" alt='GitHub'>
+                    </a>
+                </span>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile</title>
+  <link rel="stylesheet" href="../css/profile.css">
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>User Profile</h1>
+    <!-- User Profile Section -->
+    <div class="profile">
+      <div id="up-img">
+        <img src="../assets/blank-profile-picture-973460_960_720.webp" alt="Profile Picture" id="profile-img"><br>
+        <label for="file-input" id="upload-button">Upload Photo</label>
+        <input type="file" id="file-input">
+      </div>
+      <div class="user-details">
+        <p><strong>Name:</strong> <span id="name">Name</span></p>
+        <p><strong>Username:</strong> <span id="username">Username</span></p>
+        <p><strong>Email:</strong> <span id="email">Email</span></p>
+        <p><strong>State: </strong> <span id="state">State</span></p>
+        <p><strong>Pincode: </strong> <span id="pincode">Pincode</span></p>
+      </div>
+      <button onclick="openDialog()" id="dialog-but"><img src="../assets/OIP.jpg" alt="edit-details" id="dialog-img"></button>
+    </div>
+
+    <!-- Dialog Box for Editing Profile -->
+    <div id="dialog" class="dialog">
+      <h2>Edit Profile</h2>
+      <!-- Form to edit user profile details -->
+      <form id="editForm">
+        <!-- Input fields for editing profile details -->
+        <label for="name">Name: </label>
+        <input type="text" id="edit-name" name="name" placeholder="Name"><br>
+        <br>
+        <label for="username">Username: </label>
+        <input type="text" id="edit-username" name="username" placeholder="username"><br>
+        <br>
+        <label for="email">Email: </label>
+        <input type="email" id="edit-email" name="email" placeholder="email"><br>
+        <br>
+        <label for="state">State: </label>
+        <input type="text" id="edit-state" name="state" placeholder="state"><br>
+        <br>
+        <label for="pincode">Pincode: </label>
+        <input type="text" id="edit-pincode" name="pincode" placeholder="pincode"><br>
+        <br>
+        <!-- Button to submit form -->
+        <button type="submit" onclick="saveChanges()">Save</button>
+      </form>
+    </div>
+
+    <!-- Recent Requests Section -->
+    <div class="recent-requests">
+      <h2>Recent Requests</h2>
+      <!-- List of recent requests -->
+      <div class="request">
+        <p><strong>Date:</strong> 2022-03-01</p>
+        <p><strong>Pollution Type:</strong> plastic</p>
+        <p><strong>Area:</strong> Downtown</p>
+        <p><strong>Status:</strong> <span class="status completed">Completed</span></p>
+      </div>
+
+      <div class="request">
+        <p><strong>Date:</strong> 2022-03-02</p>
+        <p><strong>Pollution Type:</strong> plastic</p>
+        <p><strong>Area:</strong> Riverside</p>
+        <p><strong>Status:</strong> <span class="status pending">Pending</span></p>
+      </div>
+
+      <div class="request">
+        <p><strong>Date:</strong> 2022-03-03</p>
+        <p><strong>Pollution Type:</strong> plastic</p>
+        <p><strong>Area:</strong> Suburbs</p>
+        <p><strong>Status:</strong> <span class="status declined">Decline</span></p>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Function to open dialog box for editing profile
+  
+    const fileInput = document.getElementById('file-input');
+      const profileImg = document.getElementById('profile-img');
+  
+      // Add event listener to file input element
+      fileInput.addEventListener('change', function() {
+        const file = this.files[0]; // Get the selected file
+        if (file) {
+          const reader = new FileReader(); // Create a FileReader object
+          reader.readAsDataURL(file); // Read the file as a data URL
+  
+          // Callback function to handle file reading
+          reader.onload = function() {
+            profileImg.src = reader.result; // Set the src attribute of the profile image to the data URL
+          }
+        }
+      });
+  
+    // Function to open dialog box for editing profile
+    function openDialog() {
+      document.getElementById('dialog').style.display = 'block';
+    }
+  
+    // Function to save changes made in the dialog box
+    function saveChanges(event) {
+      event.preventDefault();
+      // Get edited values from the dialog box
+      var newName = document.getElementById('edit-name').value;
+      var newUsername = document.getElementById('edit-username').value;
+      var newEmail = document.getElementById('edit-email').value;
+      var newState = document.getElementById('edit-state').value;
+      var newPincode = document.getElementById('edit-pincode').value;
+  
+      document.getElementById('name').textContent = '';
+      document.getElementById('username').textContent = '';
+      document.getElementById('email').textContent = '';
+      document.getElementById('state').textContent = '';
+      document.getElementById('pincode').textContent = '';
+  
+      // Update values on the main page
+      document.getElementById('name').textContent = newName;
+      document.getElementById('username').textContent = newUsername;
+      document.getElementById('email').textContent = newEmail;
+      document.getElementById('state').textContent = newState;
+      document.getElementById('pincode').textContent = newPincode;
+  
+      // Close the dialog box
+      document.getElementById('dialog').style.display = 'none';
+    }
+    document.getElementById('editForm').addEventListener('submit', saveChanges);
+  
+    // Event listeners for input fields in the dialog box
+    document.getElementById('edit-name').addEventListener('input', function() {
+      document.getElementById('name').textContent = this.value;
+    });
+  
+    document.getElementById('edit-username').addEventListener('input', function() {
+      document.getElementById('username').textContent = this.value;
+    });
+  
+    document.getElementById('edit-email').addEventListener('input', function() {
+      document.getElementById('email').textContent = this.value;
+    });
+  
+    document.getElementById('edit-state').addEventListener('input', function() {
+      document.getElementById('state').textContent = this.value;
+    });
+  
+    document.getElementById('edit-pincode').addEventListener('input', function() {
+      document.getElementById('pincode').textContent = this.value;
+    });
+  </script>
+
+</body>
+
+</html>
