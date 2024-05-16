@@ -14,7 +14,7 @@ This project aims to develop a web application called Marine Pollution SeaGuardi
 - Front-end: HTML, CSS, JavaScript
 - Back-end: Node.js, Express.js
 - Database: MongoDB
-- Other tools and libraries: React, Redux, Leaflet, Chart.js
+- Other tools and libraries: Firebase , newapi ,iqmapapi
 
 ## Installation
 1. Clone the repository: `git clone https://github.com/your-username/Marine-Pollution-SeaGuardian.git`
