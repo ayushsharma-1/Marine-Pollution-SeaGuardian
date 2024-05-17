@@ -22,7 +22,3 @@ function requestOtp() {
         console.error('Error:', error);
     });
 }
-
-function navigateToHome() {
-    window.location.href = 'home.html';
-  }

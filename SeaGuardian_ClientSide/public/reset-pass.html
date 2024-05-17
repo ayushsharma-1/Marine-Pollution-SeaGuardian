@@ -21,7 +21,7 @@
                         id="email"
                         name="email"
                         placeholder="Your Email"
-                        required
+                       required
                     />
                     <img alt="Email Icon" title="Email Icon" class="input-icon" src="../assets/email.svg" />
                 </div>
@@ -29,9 +29,31 @@
                         <span>Remember your password?</span>
                         <a href="./login.html" title="Back to Login">Back to Login</a>
                     </div>
-                    <button class="bubbly-button1"><a href="./otp-verify.html">Send otp</a></button>
+                    <button class="bubbly-button1" onclick="checkandsend()">Send otp</button>
             </form>
         </div>
     </div>
+    <script>
+        function checkandsend() {
+            var email = document.getElementById("email").value;
+            if (email == "") {
+                alert("Please enter your email");
+            } 
+            else if (!isValidEmail(email)) {
+                alert("Please enter a valid email address");
+            } 
+            else {
+                // Redirect after a delay of 2 seconds (2000 milliseconds)
+                setTimeout(function() {
+                    window.location.href = "./home.html";
+                }, 2000);
+            }
+        }
+
+        function isValidEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    </script>
 </body>
 </html>
