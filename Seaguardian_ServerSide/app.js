@@ -156,9 +156,10 @@ app.post('/Report', async (req, res) => {
 
         // Save the report to the database
         const savedReport = await report.save();
-        // res.status(201).json(savedReport); 
-        // Redirect to home.html after successful creation
-        res.status(201).redirect("home.html");
+        res.status(201);
+        setTimeout(() => {
+            res.redirect("home.html");
+        }, 2000);
         
     } catch (err) {
         console.error(err);
