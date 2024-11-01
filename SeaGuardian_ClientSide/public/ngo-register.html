@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Registration</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+<div id="ngoRegistrationForm">
+    <div class="centering">
+        <form class="my-form" action="/RegisterNGO" method="POST">
+            <div class="login-welcome-row">
+                <h1>NGO Registration</h1>
+            </div>
+            <!-- NGO Registration Form Fields -->
+            <div class="form-group">
+                <label for="ngoName">NGO Name:</label>
+                <input
+                    aria-label="NGO Name"
+                    type="text"
+                    id="ngoName"
+                    name="ngoName"
+                    placeholder="Enter NGO Name"
+                    required
+                />
+            </div>
+            <div class="form-group">
+                <label for="addressLine1">Address Line 1:</label>
+                <input
+    id="addressLine1"
+    type="text"
+    aria-label="Address Line 1"
+    name="addressLine1"
+    placeholder="Address Line 1"
+    required
+/>
+            </div>
+            <div class="form-group">
+                <label for="addressLine2">Address Line 2 (Location, City, Postal Code):</label>
+                <input
+    id="addressLine2"
+    type="text"
+    aria-label="Address Line 2"
+    name="addressLine2"
+    placeholder="Location, City, Postal Code"
+    required
+/>
+            </div>
+            <div class="form-group">
+                <label for="registrationNo">Registration No.:</label>
+                <input
+                    id="registrationNo"
+                    type="text"
+                    aria-label="NGO Registration No."
+                    name="registrationNo"
+                    placeholder="Enter Registration No."
+                    required
+                />
+            </div>
+            <div class="form-group">
+                <label for="workingAreas">Working Areas:</label>
+                <textarea
+                    id="workingAreas"
+                    name="workingAreas"
+                    placeholder="Enter Working Areas"
+                    rows="1"
+                    maxlength="50"
+                    required
+                ></textarea>
+            </div>
+            <div class="form-group">
+                <label for="purpose">Purpose:</label>
+                <textarea
+                    id="purpose"
+                    name="purpose"
+                    placeholder="Enter Purpose"
+                    rows="1"
+                    maxlength="50"
+                    required
+                ></textarea>
+            </div>
+    </div>
+    <div>
+        <button class="bubbly-button" type="submit">Submit</button>
+    </div>
+</form>
+    <div class="my-form__row2">
+        <span>If You are a User</span>
+        <a href="./sighnup.html" title="Register Here">Register Here</a>
+      </div>
+</div>
+<footer>
+    <a href="./home.html">Go to Home</a>
+</footer>
+<script src="../js/login.js"></script>
+</body>
+</html>

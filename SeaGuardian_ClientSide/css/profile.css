@@ -1,0 +1,136 @@
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #0077cc, #4caf50);
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 60px);
+    margin: 20px 30px;
+  }
+
+  .profile img {
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+
+  .user-details {
+    margin: 5%;
+    flex-grow: 1;
+  }
+
+  .user-details p {
+    margin: 5px 0;
+  }
+
+  .dialog {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .recent-requests {
+    margin-top: 30px;
+  }
+
+  .request {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+
+  .status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+
+  #profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 10px auto;
+    border: 3px solid #ccc;
+    display: block;
+  }
+
+  #up-img{
+    width: auto;
+    margin-right: 30px;
+  }
+  #upload-button {
+    /* margin: 10px; */
+    /* Adjusted margin */
+    /* margin-right: 10%; */
+    margin-left: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #0077cc;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    /* display: block; */
+    /* width: fit-content; */
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  .completed {
+    background-color: #00cc00;
+  }
+
+  .pending {
+    background-color: #cccc00;
+  }
+
+  .declined {
+    color: white;
+    background-color: #cc0000;
+  }
+
+  #dialog-img{
+    width: 60px;
+    height: 60px;
+    box-shadow: 7px 7px 7px rgba(34, 33, 33, 0.3);
+  }
+
+  #dialog-but{
+    width: 70px;
+    border-radius: 50%;
+    background-color: #f9f9f9;
+    border: none;
+    box-shadow: black;
+    cursor: pointer;
+  }
