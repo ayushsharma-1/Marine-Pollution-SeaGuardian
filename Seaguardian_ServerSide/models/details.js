@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-const ReportsSchema = new mongoose.Schema({
+const ReportsSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -22,15 +23,12 @@ const ReportsSchema = new mongoose.Schema({
         required: true,
         validate: {
             validator: function(v) {
-                // Simple email validation using regex
                 return /\S+@\S+\.\S+/.test(v);
             },
             message: props => `${props.value} is not a valid email address!`
         }
     },
-    locationPollution: {
-        type: String
-    },
+    locationPollution: String,
     typeOfPollution: {
         type: String,
         required: true
@@ -44,16 +42,16 @@ const ReportsSchema = new mongoose.Schema({
         required: true
     },
     image: {
-        type: String
+        type: String,
+        validate: {
+            validator: function(v) {
+                return !v || /^(ftp|http|https):\/\/[^ "]+$/.test(v);
+            },
+            message: props => `${props.value} is not a valid URL!`
+        }
     },
-    latitude: {
-        type: Number
-    },
-    longitude: {
-        type: Number
-    }
+    latitude: Number,
+    longitude: Number
 });
 
-const Reports = mongoose.model("Reports", ReportsSchema);
-
-module.exports = Reports;
+module.exports = mongoose.model("Reports", ReportsSchema);

@@ -134,11 +134,43 @@ assetFiles.forEach((file) => {
     });
 });
 
-app.post('/Report', async (req, res) => {
+const multer = require('multer');
+const AWS = require('aws-sdk');
+const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
+
+
+// Configure multer for in-memory storage
+const upload = multer({ storage: multer.memoryStorage() });
+
+const s3 = new S3Client({
+    region: process.env.AWS_REGION,
+    credentials: {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY
+    }
+});
+
+
+// Report submission route with image upload
+app.post('/Report', upload.single('image'), async (req, res) => {
     try {
-        const { name, date, address, contact, email, locationPollution, typeOfPollution, areaOfPollution, polybagsPresent, image, latitude, longitude } = req.body;
-        
-        // Create a new report instance
+        const { name, date, address, contact, email, locationPollution, typeOfPollution, areaOfPollution, polybagsPresent, latitude, longitude } = req.body;
+
+        let imageUrl = '';
+        if (req.file) {
+            const params = {
+                Bucket: process.env.AWS_BUCKET_NAME,
+                Key: `${Date.now()}_${req.file.originalname}`,
+                Body: req.file.buffer,
+                ContentType: req.file.mimetype,
+            };
+            
+
+            const command = new PutObjectCommand(params);
+            await s3.send(command);
+            imageUrl = `https://${process.env.AWS_BUCKET_NAME}.s3.${process.env.AWS_REGION}.amazonaws.com/${params.Key}`;
+        }
+
         const report = new Reports({
             name,
             date,
@@ -149,24 +181,24 @@ app.post('/Report', async (req, res) => {
             typeOfPollution,
             areaOfPollution,
             polybagsPresent,
-            image,
+            image: imageUrl,
             latitude,
             longitude
         });
 
-        // Save the report to the database
         const savedReport = await report.save();
         res.status(201);
         setTimeout(() => {
             res.redirect("home.html");
         }, 2000);
-        
+
     } catch (err) {
         console.error(err);
-        // Handle validation errors and other errors
         res.status(400).json({ message: 'Failed to save the report.' }); 
     }
 });
+
+
 
   app.post('/RegisterNGO', async (req, res) => {
     try {
