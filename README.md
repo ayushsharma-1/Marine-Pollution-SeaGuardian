@@ -13,8 +13,9 @@ This project aims to develop a web application called Marine Pollution SeaGuardi
 ## Technologies Used
 - Front-end: HTML, CSS, JavaScript
 - Back-end: Node.js, Express.js
-- Database: MongoDB
-- Other tools and libraries: Firebase, newsapi, locationiq
+- Database: MongoDB, AWS S3
+- Other tools and libraries: Firebase, Amazon Web Services
+- API: newsapi, locationiq
 
 ## Installation
 1. Clone the repository: `git clone https://github.com//Ashmit-Kumar/SeaGuardian.git`
