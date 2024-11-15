@@ -12,7 +12,7 @@ This project aims to develop a web application called Marine Pollution SeaGuardi
 
 ## Technologies Used
 - Front-end: HTML, CSS, JavaScript
-- Back-end: Node.js, Express.js
+- Back-end: Node.js, Express.js, Multer
 - Database: MongoDB, AWS S3, Firebase
 - Other tools and libraries: Firebase, Amazon Web Services
 - API: newsapi, locationiq
