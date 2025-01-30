@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", getNews);
 
 function getNews() {
-    const apiKey = 'd8a08510964b49109c69826afa31adde'; 
-    const url = `https://newsapi.org/v2/top-headlines?q=marine%20OR%20sea%20OR%20pollution&apiKey=${apiKey}`;
+    const apiKey = 'e1fbb8c9965351f9d8d79f39563eaab1';
+const url = `https://gnews.io/api/v4/search?q=marine%20OR%20sea%20OR%20pollution&max=10&apikey=${apiKey}`;
+
 
 
 
