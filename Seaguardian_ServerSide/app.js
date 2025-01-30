@@ -27,10 +27,15 @@ app.use(express.static(path.join(__dirname, '..','SeaGuardian_ClientSide', "publ
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, '..', 'SeaGuardian_ClientSide', 'public', 'home.html'));
 });
-const pages = ["donate", "latest", "ourProgram", "ngo-register", "captivity", "extinct", "details", "fishery", "pollution", "shark", "whaling", "reset-password", "otp-verify", "ques1", "ques2", "ques3", "ques4", "ques5", "FAQs"];
+const pages = [
+    "action", "captivity", "details", "donate", "extinct", "FAQs", "fishery",
+    "latest", "login", "ngo-register", "otp-verify", "ourProgram", "pollution", "profile",
+    "ques1", "ques2", "ques3", "ques4", "ques5", "reset-pass", "shark", "sighnup", "whaling"
+];
+
 pages.forEach(page => {
     app.get(`/${page}`, (req, res) => {
-        res.sendFile(path.join(__dirname,'..','SeaGuardian_ClientSide', "public", `${page}.html`));
+        res.sendFile(path.join(__dirname, "..", "SeaGuardian_ClientSide", "public", `${page}.html`));
     });
 });
 
