@@ -32,7 +32,7 @@ function displayNews(articles) {
         const li = document.createElement("li");
         li.innerHTML = `
         <div class="news-card">
-            <img src="${article.urlToImage || '../assets/default-news.jpg'}" alt="News Image" class="news-image">
+            <img src="${article.image || '../assets/default-news.jpg'}" alt="News Image" class="news-image">
             <div class="news-content">
                 <h2 class="news-title">${article.title || "No title available"}</h2>
                 <p class="news-description">${article.description || "No description available"}</p>
