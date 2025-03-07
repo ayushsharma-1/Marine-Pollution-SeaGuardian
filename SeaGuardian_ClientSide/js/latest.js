@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", getNews);
 
 function getNews() {
 const apiKey = 'e1fbb8c9965351f9d8d79f39563eaab1';
-const url = `https://gnews.io/api/v4/search?q=marine%20OR%20sea%20OR%20pollution&max=10&lang=en&apikey=${apiKey}`;
+const url = `https://gnews.io/api/v4/search?q=marine%20OR%20sea%20OR%20pollution&max=18&lang=en&apikey=${apiKey}`;
 
 
 
