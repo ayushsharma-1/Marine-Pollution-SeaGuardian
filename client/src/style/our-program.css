@@ -1,0 +1,194 @@
+.our-program-container {
+    background: transparent;
+    margin: 2% auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    text-align: center;
+}
+
+.program-container{
+    background: linear-gradient(to top, var(--background-gradient-top), var(--background-gradient-middle), var(--background-gradient-top));
+}
+
+.our-program-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    word-spacing: 5px;
+    color: #000;
+}
+
+#our-program-state-list {
+    background: white;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    display: flex;
+    align-items: center;
+    overflow-x: auto;
+}
+
+#our-program-state-list-container {
+    display: flex;
+    gap: 15px;
+    padding: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+#our-program-state-list-container li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: linear-gradient(to top, var(--background-gradient-top), var(--background-gradient-middle), var(--background-gradient-top));
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    min-width: 160px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#our-program-state-list-container li:hover {
+    transform: scale(1.05);
+    background-color: #38b5f4;
+    color: white;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#our-program-state-list-container li.our-program-selected {
+    color: #000000;
+    transform: scale(1.1);
+    border-radius: 15px;
+    padding: 30px;
+    font-size: larger;
+    font-weight: bolder;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+#our-program-state-list-container li img {
+    max-width: 110px;
+    max-height: 110px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+#our-program-state-list-container li:hover img {
+    transform: rotate(5deg);
+}
+
+.our-program-scroll-arrow {
+    cursor: pointer;
+    background-color: #c9f8ea;
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transition: background-color 0.3s ease;
+}
+
+.our-program-scroll-arrow:hover {
+    background-color: #38b5f4;
+    color: white;
+}
+
+.our-program-left-arrow, 
+.our-program-right-arrow {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#our-program-ngo-table {
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    overflow-x: auto;
+}
+
+#our-program-ngo-table h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+main table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+main th {
+    background-color: #f4f4f4;
+    font-weight: bolder;
+    font-size: larger;
+    padding: 15px;
+    text-align: left;
+    border: 5px solid #dddd;
+}
+
+main td {
+    border: 5px solid #dddd;
+    padding: 15px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+
+main tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+main tr:hover {
+    background-color: #c9f8ea;
+}
+
+main a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+main a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+    .our-program-container h1 {
+        font-size: 1.8rem;
+    }
+
+    #our-program-state-list-container li {
+        min-width: 80px;
+        padding: 10px;
+        font-size: small;
+    }
+
+    #our-program-state-list-container li img {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    main table {
+        font-size: 0.9rem;
+    }
+
+    .our-program-scroll-arrow {
+        width: 30px;
+        height: 30px;
+        padding: 5px;
+        font-size: 16px;
+    }
+}

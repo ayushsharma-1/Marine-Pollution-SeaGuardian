@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-blue: #0073ff;
+    --background-gradient-top: #ffffff;
+    --background-gradient-middle: #599bcb6b;
+    --border-color: #ccc;
+    --text-color: black;
+    --white: #ffffff;
+  }
+
+
+  

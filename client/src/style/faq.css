@@ -1,0 +1,129 @@
+/* Color Palette */
+:root {
+    --primary-blue: #0073ff;
+    --background-gradient-top: #ffffff;
+    --background-gradient-middle: #599bcb6b;
+    --border-color: #ccc;
+    --text-color: black;
+    --white: #ffffff;
+  }
+  
+  /* Main Styles */
+  main {
+      padding: 20px 70px 20px 70px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+  }
+  
+  .faq-title {
+      font-size: 30px;
+      text-align: center;
+  }
+  
+  .faq-q_a {
+      padding-top: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 30rem);
+      row-gap: 15px;
+      column-gap: 10px;
+  }
+  
+  .faq-q_a p {
+      border-bottom: 1px solid var(--text-color);
+      margin-left: 5%;
+      padding-bottom: 2%;
+  }
+  
+  .faq-q_a p a {
+      font-size: 20px;
+      color: var(--text-color);
+      text-decoration: none;
+  }
+  
+  .faq-thank-u {
+      margin-top: 20px;
+      text-align: center;
+  }
+  
+  .faq-section__support {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 10px;
+      box-shadow: 20px 13px 20px 10px rgba(0, 0, 0, 0);
+      background: linear-gradient(to top, var(--background-gradient-top), var(--background-gradient-middle), var(--background-gradient-top));
+      text-align: center;
+  }
+  
+  .faq-section__support h3 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+  }
+  
+  .faq-form__group {
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 70%;
+      margin-left: 15%;
+  }
+  
+  .faq-form__group label {
+      font-weight: bold;
+      font-size: 25px;
+  }
+  
+  .faq-form__group input,
+  .faq-form__group select {
+      width: 100%;
+      padding: 2%;
+      border-radius: 5px;
+      border: 1px solid var(--border-color);
+      margin-top: 0.5rem;
+  }
+  
+  .faq-form__group textarea {
+      width: 100%;
+      padding: 7%;
+      border-radius: 5px;
+      border: 1px solid var(--border-color);
+      margin-top: 0.5rem;
+      resize: vertical;
+  }
+  
+  .faq-form__group input[type="file"] {
+      cursor: pointer;
+  }
+  
+  .faq-sub__btn {
+      background-color: var(--primary-blue);
+      color: var(--white);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+  }
+  
+  .faq-sub__btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  .faq-frm {
+      width: 100%;
+  }
+  
+  .faq-faq {
+      margin-left: 15%;
+      margin-right: 15%;
+  }
+
+  @media (max-width: 768px) {
+    main {
+        padding: 20px 20px;
+    }
+  }

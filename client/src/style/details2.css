@@ -1,0 +1,129 @@
+#details-header {
+    background: linear-gradient(to right, #1e3c72, #2a5298);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+}
+
+#details-header h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin-top: 1rem;
+}
+
+#details-header img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.details-info-block {
+    display: flex;
+    align-items: center;
+    padding: 30px;
+    background-color: #ffffff;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.details-info-block img {
+    width: 30%;
+    margin-right: 30px;
+    border-radius: 5px;
+}
+
+.details-info-block h2 {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    font-weight: normal;
+}
+
+#details-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.details-footer-item {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.details-footer-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.details-footer-item h3 {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    font-weight: normal;
+}
+
+#details-text-section {
+    padding: 30px;
+    background-color: #ffffff;
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+#details-text-section h1 {
+    font-size: 28px;
+    color: #1e3c72;
+    margin-top: 30px;
+}
+
+#details-text-section h2 {
+    font-size: 22px;
+    color: #2a5298;
+    margin-top: 25px;
+}
+
+#details-text-section p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 15px 0;
+    color: #444;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .details-info-block {
+        flex-direction: column;
+    }
+    
+    .details-info-block img {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    #details-footer {
+        flex-direction: column;
+    }
+    
+    .details-footer-item {
+        margin: 10px 0;
+    }
+}

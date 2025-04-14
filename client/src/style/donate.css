@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
+
+.donate-container1 {
+    margin-top: 10px;
+    background-color: white;
+    margin: 10px 300px;
+    padding: 10px;
+    width: 32%;
+    height: 570px;
+    overflow: auto;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+.donate-container1 h1 {
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.donate-container1 h2 {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.donate-container1 h3 {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.donate-container1 p {
+    font-size: 20px;
+    margin: 15px;
+}
+
+.donate-container1 button{
+    font-size: 17px;
+    padding: 0.5em 2em;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    background: #F8E559;
+    color: white;
+    border-radius: 2px;
+}
+
+.donate-type-of-gift {
+    display: grid;
+    grid-template-columns: repeat(2,180px);
+    column-gap: 12px;
+    justify-content: center;
+}
+
+.donate-pay-type {
+    display: grid;
+    grid-template-columns: repeat(2,180px);
+    column-gap: 12px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.donate-price {
+    display: grid;
+    grid-template-columns: repeat(3, 137px);
+    row-gap: 12px;
+    column-gap: 12px;
+    margin-top: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.donate-button {
+    text-align: center;
+}
+
+.donate-button button {
+    font-size: 17px;
+    padding: 0.5em 2em;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    background: #F8E559;
+    color: white;
+    border-radius: 2px;
+}
+
+.donate-button button:hover {
+    background: linear-gradient(90deg, #ffe109 0%, #d1c40e 100%);
+    cursor: pointer;
+}
+
+.donate-button .donate1 {
+    max-width: 249px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.donate-input-group {
+    margin-bottom: 10px;
+}
+
+.donate-label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+.donate-input, .donate-select {
+    width: 90%;
+    height: 40px;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+    border: 2px groove rgba(0, 0, 0, 0.349);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.donate-name-group {
+    display: flex;
+    gap: 10px;
+}
+
+.donate-name-group .donate-input-group {
+    flex: 1;
+}
+
+.donate-expiration-group {
+    display: flex;
+    gap: 10px;
+}
+
+.donate-expiration-group .donate-input-group {
+    flex: 1;
+}
+
+.donate-radio-buttons-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 10px;
+}
+
+.donate-radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.donate-radio-button {
+    position: relative;
+    cursor: pointer;
+}
+
+.donate-radio-button__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.donate-radio-button__label {
+    display: inline-block;
+    padding-left: 30px;
+    position: relative;
+    font-size: 20px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.donate-radio-button__custom {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid #555;
+}
+
+
+.donate-radio-button__input:checked + .donate-radio-button__label .donate-radio-button__custom {
+    transform: translateY(-50%) scale(0.9);
+    border: 5px solid #4c8bf5;
+    color: #4c8bf5;
+}
+
+.donate-radio-button__input:checked + .donate-radio-button__label {
+    color: #4c8bf5;
+}
+
+.donate-button.active, .donate-price button.active {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, #ffe109 0%, #d1c40e 100%);
+}
+
+@media screen and (max-width: 768px) {
+    .donate-container1 {
+        background-color: white;
+        margin: 10px 20px;
+        padding: 10px;
+        width: 90%;
+        height: 570px;
+        overflow: auto;
+        font-family: 'Red Hat Display', sans-serif;
+    }
+
+
+}

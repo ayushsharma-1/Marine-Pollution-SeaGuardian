@@ -1,0 +1,188 @@
+/* General header styles */
+header {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 70px;
+  width: 100%;
+  height: 100%;
+}
+
+/* Logo */
+.header-logo img {
+  height: 100px;
+}
+
+/* Navigation Menu */
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-menu {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.header-menu li {
+  margin: 20px;
+}
+
+.header-menu li a {
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  color: #000;
+  transition: 0.3s all;
+}
+
+.header-menu li a:hover {
+  color: #00000088;
+  text-decoration: underline;
+}
+
+/* Buttons (Donate & Login) */
+.header-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.header-btn {
+  padding: 10px 20px;
+  font-size: 17px;
+  color: #fff;
+  border-radius: 7px;
+  letter-spacing: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  border: none;
+}
+
+.header-donate {
+  background: #F8E559;
+  box-shadow: 0 0 25px #FAEF5D;
+}
+
+.header-donate:hover {
+  box-shadow: 0 0 5px #FAEF5D, 0 0 25px #FAEF5D, 0 0 50px #FAEF5D, 0 0 100px #FAEF5D;
+}
+
+.header-login {
+  background: #365486;
+  box-shadow: 0 0 25px #365486;
+  margin-left: 15px;
+}
+
+.header-login:hover {
+  box-shadow: 0 0 5px #365486, 0 0 25px #365486, 0 0 50px #365486, 0 0 100px #365486;
+}
+
+/* Hamburger Menu */
+.header-hamburger {
+  display: none;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+/* ... (existing styles remain the same) */
+
+/* Updated Responsive Design */
+@media screen and (max-width: 1024px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 30px;
+    position: relative;
+  }
+
+  .header-logo img {
+    height: 70px;
+  }
+
+  .header-nav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    display: none;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .header-nav.header-nav-active {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header-menu {
+    flex-direction: column;
+    width: 100%;
+    position: static;
+    padding: 0;
+  }
+
+  .header-menu li {
+    margin: 10px 0;
+  }
+
+  .header-menu li a {
+    font-size: 24px;
+  }
+
+  .header-buttons {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .header-btn {
+    width: 100%;
+    margin-left: 0 !important;
+    font-size: 15px;
+    padding: 12px 18px;
+  }
+
+  .header-hamburger {
+    display: block;
+    z-index: 1001;
+  }
+}
+
+/* Phone-specific adjustments */
+@media screen and (max-width: 480px) {
+  header {
+    padding: 15px 20px;
+    width: 100%;
+  }
+
+  .header-logo img {
+    height: 50px;
+  }
+
+  .header-menu li a {
+    font-size: 20px;
+  }
+
+  .header-btn {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  .header-hamburger {
+    transform: scale(0.9);
+  }
+
+  .header-nav {
+    padding: 15px 20px;
+  }
+}

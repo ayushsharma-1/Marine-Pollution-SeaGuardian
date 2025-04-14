@@ -1,0 +1,209 @@
+
+
+.the-latest-container {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
+    background: linear-gradient(to top, var(--background-gradient-top), var(--background-gradient-middle), var(--background-gradient-top));
+}
+
+.the-latest-news-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.the-latest-news-item {
+    perspective: 1000px;
+}
+
+.the-latest-news-card {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.the-latest-news-image {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.the-latest-news-card:hover .the-latest-news-image {
+    transform: scale(1.05);
+}
+
+.the-latest-news-content {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: var(--background-light);
+}
+
+.the-latest-news-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.the-latest-news-description {
+    font-size: 15px;
+    color: var(--text-light);
+    margin-bottom: 15px;
+    flex-grow: 1;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.the-latest-news-source {
+    font-size: 13px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+    opacity: 0.8;
+}
+
+.the-latest-read-more-btn {
+    align-self: flex-start;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    gap: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.the-latest-read-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+}
+
+.the-latest-read-more-btn::after {
+    content: '→';
+    margin-left: 5px;
+    transition: transform 0.2s ease;
+}
+
+.the-latest-read-more-btn:hover::after {
+    transform: translateX(3px);
+}
+
+.the-latest-heading1 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 800;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    letter-spacing: -0.5px;
+    position: relative;
+    overflow: hidden;
+}
+
+.the-latest-heading1::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(-45deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .the-latest-news-container {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .the-latest-heading1 {
+        font-size: 26px;
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .the-latest-container {
+        padding: 0 10px;
+    }
+
+    .the-latest-news-title {
+        font-size: 18px;
+    }
+
+    .the-latest-news-description {
+        font-size: 14px;
+    }
+}
+
+.the-latest-loading-spinner {
+    text-align: center;
+    font-size: 30px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.the-latest-error-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8d7da;
+    border-radius: 10px;
+}
+
+.the-latest-error {
+    color: #721c24;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.the-latest-retry-btn {
+    background: linear-gradient(45deg, #0172af, #74febe);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.the-latest-retry-btn:hover {
+    transform: scale(1.05);
+}

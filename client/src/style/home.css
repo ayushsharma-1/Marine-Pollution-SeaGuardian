@@ -1,0 +1,325 @@
+/* ----- IMPORTS ----- */
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500&display=swap');
+
+/* ----- ROOT VARIABLES ----- */
+:root {
+    --footer-background: white;
+    --text-color: #111420;
+    --text-gray: #e1e1e1;
+    --text-heading-gray: #b9b9b9;
+    --background: #3C343D;
+    --background-border: #6B626C;
+}
+
+/* ----- BASE STYLES ----- */
+html {
+    font-size: 16px;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+body {
+    position: relative;
+    margin: 0;
+}
+
+/* ----- BACKGROUND VIDEO ----- */
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-video video {
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ----- CONTAINER ----- */
+.container {
+    margin-top: 300px;
+}
+
+/* ----- LEFT PANEL ----- */
+.panel-left {
+    margin-left: 120px;
+    width: 35%;
+    padding: 40px;
+    border: 1px solid white;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.699);
+    box-shadow: 20px 13px 20px 10px rgba(0, 0, 0, 0.8);
+}
+
+.panel-left h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    padding-bottom: 30px;
+    margin-left: -200px;
+}
+
+.panel-left h3 {
+    font-size: 25px;
+}
+
+/* ----- MID SECTION ----- */
+.mid {
+    padding: 0 0;
+    margin-top: 30px;
+    background-color: #EEF5FF;
+}
+
+.mid h3 {
+    margin-left: 100px;
+    padding: 3% 3%;
+    font-weight: bold;
+    font-size: 48px;
+    color: #365486;
+    text-align: center;
+}
+
+.mid h1 {
+    text-align: center;
+    font-size: 150px;
+    color: #164863;
+}
+
+/* ----- HISTORY SECTION ----- */
+.history {
+    display: flex;
+    align-items: center;
+    margin-left: 120px;
+    margin-right: 80px;
+    padding: 20px;
+    border: 4px solid rgba(0, 153, 255, 0.788);
+    border-radius: 30px;
+}
+
+.his-p {
+    color: #365486;
+    margin-left: 50px;
+    font-size: 27px;
+    font-weight: bolder;
+}
+
+.his-p h4 {
+    font-size: 20px;
+}
+
+.his-p h2 a {
+    color: #365486;
+}
+
+.his-p p {
+    color: #365486;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.his-img img {
+    height: 300px;
+}
+
+/* ----- ABOUT US SECTION ----- */
+.parallax-image {
+    display: block;
+    height: 350px;
+    width: 100%;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+.parallax-image-01 {
+    background-image: url("/png-jpg/parallax-imgs/img1.jpg");
+}
+
+.parallax-image-02 {
+    background-image: url("/png-jpg/parallax-imgs/img2.jpg");
+}
+
+.parallax-image-03 {
+    background-image: url("/png-jpg/parallax-imgs/img3.jpg");
+}
+
+.sec {
+    margin: 25px 150px;
+}
+
+.slide-img {
+    margin-left: 120px;
+    margin-right: 80px;
+    padding: 30px;
+}
+
+section > h2 {
+    text-transform: uppercase;
+}
+
+.about-us-h2 {
+    font-size: 30px;
+}
+
+.about-us-p {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.about-us-p li {
+    font-size: 20px;
+}
+
+.about-us-btn {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: rgba(0, 128, 255, 0.2);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 3px 10px;
+    color: black;
+}
+
+.about-us-btn:hover {
+    background-color: rgb(0, 128, 255);
+    color: white;
+}
+
+/* ----- LINKS ----- */
+.link1 {
+    padding: 5px;
+    color: #7c9dac;
+    display: inline-block;
+    line-height: 20px;
+    border-radius: 3px;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.link2 {
+    padding: 5px;
+    color: #000000;
+    display: inline-block;
+    line-height: 10px;
+    border-radius: 1px;
+    font-family: 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ----- MEDIA QUERIES ----- */
+@media screen and (max-width: 768px) {
+    /* Panel Left Mobile */
+    .panel-left {
+        width: 83%;
+        margin: 20px auto;
+        padding: 25px;
+        box-shadow: 8px 6px 15px 5px rgba(0, 0, 0, 0.6);
+        margin-left: 35px;
+    }
+
+    .panel-left h1 {
+        font-size: 36px;
+        margin-left: 0;
+        padding-bottom: 15px;
+        text-align: center;
+    }
+
+    .panel-left h3 {
+        font-size: 18px;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    /* Mid Section Mobile */
+    .mid {
+        margin-top: 20px;
+        padding: 0 10px;
+    }
+    
+    .mid h3 {
+        margin-left: 0;
+        font-size: 24px;
+        padding: 20px 15px;
+        line-height: 1.3;
+        word-spacing: 1px;
+        letter-spacing: 0.5px;
+    }
+    
+    .mid h1 {
+        font-size: 50px;
+        margin: 10px 0;
+    }
+
+    /* History Section Mobile */
+    .history {
+        flex-direction: column;
+        align-items: center;
+        margin: 10px;
+        padding: 15px;
+        border-width: 2px;
+    }
+    
+    .his-img img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+
+    .his-p {
+        text-align: center;
+        margin-left: 0;
+        font-size: 20px;
+    }
+
+    .his-p h4 {
+        font-size: 18px;
+    }
+
+    .his-p p {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    /* About Us Section Mobile */
+    .sec {
+        margin: 20px;
+    }
+
+    .slide-img {
+        margin-left: 0px;
+        margin-right: 0px;
+        padding: 10px;
+    }
+
+    /* Links Mobile */
+    .link2 {
+        font-size: 16px;
+        display: block;
+        margin-top: 10px;
+    }
+
+    /* Background Video Mobile */
+    .background-video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: none;
+    }
+}
