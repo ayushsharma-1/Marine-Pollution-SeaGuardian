@@ -3486,62 +3486,108 @@ const mapData = {
 };
 
 const Locator = () => {
-
   const mapRef = useRef(null); // Reference for the map container
   const mapInstanceRef = useRef(null); // Reference to store the map instance
-  
 
   useEffect(() => {
-    if (mapInstanceRef.current) return;
+    if (mapInstanceRef.current) return; // Prevent reinitializing the map
 
-    const map = L.map(mapRef.current).setView([28.6139, 77.2090], 6); // Initial center: Delhi
+    if (mapRef.current) {
+      // Initialize the map
+      const map = L.map(mapRef.current).setView([26.4499, 80.3318], 14);
 
-    // Add tile layers
-    const street = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '© OpenStreetMap contributors'
-    }).addTo(map);
+      const mapSatellite = L.tileLayer(
+        "https://tiles.stadiamaps.com/tiles/alidade_satellite/{z}/{x}/{y}{r}.{ext}",
+        {
+          minZoom: 0,
+          maxZoom: 20,
+          attribution:
+            '&copy; CNES, Distribution Airbus DS, © Airbus DS, © PlanetObserver (Contains Copernicus Data) | &copy; <a href="https://www.stadiamaps.com/" target="_blank">Stadia Maps</a> &copy; <a href="https://openmaptiles.org/" target="_blank">OpenMapTiles</a> &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+          ext: "jpg",
+        }
+      );
 
-    const satellite = L.tileLayer('https://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-      maxZoom: 20,
-      subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
-      attribution: '© Google'
-    });
+      const osm = L.tileLayer(
+        "http://{s}.google.com/vt?lyrs=m&x={x}&y={y}&z={z}",
+        {
+          maxZoom: 20,
+          subdomains: ["mt0", "mt1", "mt2", "mt3"],
+        }
+      );
 
-    // Layer control
-    L.control.layers({
-      "Street View": street,
-      "Satellite View": satellite
-    }).addTo(map);
+      osm.addTo(map);
 
-    // Add GeoJSON markers
-    const geoJsonLayer = L.geoJSON(mapData, {
-      pointToLayer: (feature, latlng) => {
-        return L.marker(latlng);
-      },
-      onEachFeature: (feature, layer) => {
-        layer.bindPopup(`<pre>${feature.properties.Name}</pre>`);
+      // Set up control layers
+      const baseMaps = {
+        "Satellite-Map": mapSatellite,
+        "Street-Map": osm,
+      };
+
+      const overlayMaps = {};
+
+      // Create custom marker icon
+      const myIcon = L.icon({
+        iconUrl: "png-jpg/maplogo.png",
+        iconSize: [40, 40],
+      });
+
+      // Add GeoJSON layer
+      L.geoJSON(mapData, {
+        onEachFeature: (feature, layer) => {
+          layer.bindPopup("Details: " + feature.properties.Name);
+        },
+        pointToLayer: (feature, latlng) => L.marker(latlng, { icon: myIcon }),
+      }).addTo(map);
+
+      // Add layer control
+      L.control.layers(baseMaps, overlayMaps, { collapsed: false }).addTo(map);
+
+      // Handle mousemove for coordinates
+      map.on("mousemove", (e) => {
+        const coordinateDiv = document.querySelector(".coordinate");
+        if (coordinateDiv) {
+          coordinateDiv.innerHTML = `Latitude: ${e.latlng.lat.toFixed(
+            4
+          )}, Longitude: ${e.latlng.lng.toFixed(4)}`;
+        }
+      });
+
+      // Add geocoder control
+      L.Control.geocoder().addTo(map);
+
+      // Store the map instance
+      mapInstanceRef.current = map;
+    }
+
+    // Cleanup map on unmount
+    return () => {
+      if (mapInstanceRef.current) {
+        mapInstanceRef.current.remove();
+        mapInstanceRef.current = null;
       }
-    }).addTo(map);
-
-    // Fit map to bounds of all markers
-    map.fitBounds(geoJsonLayer.getBounds());
-
-    // Add search control
-    L.Control.geocoder({
-      defaultMarkGeocode: true
-    }).addTo(map);
-
-    // Store map instance
-    mapInstanceRef.current = map;
-  }, []);
+    };
+  }, []); // Dependency array ensures it runs only once
 
   return (
-    <>
-    <Header/>
-    <div style={{ height: "90vh", width: "100%" }}>
-      <div ref={mapRef} style={{ height: "100%", width: "100%" }}></div>
+    <div>
+      <Header/>
+      <div
+        id="map"
+        ref={mapRef}
+        style={{ width: "100%", height: "80vh" }}
+      ></div>
+      <div
+        className="coordinate"
+        style={{
+          position: "absolute",
+          bottom: "10px",
+          right: "50%",
+          textDecoration: "none",
+          color: "black",
+          textShadow: "2px 2px 4px rgba(0, 0, 0, 0.5)",
+        }}
+      ></div>
     </div>
-    </>
   );
 };
 
