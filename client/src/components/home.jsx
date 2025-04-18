@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
-import "../style/home.css"
+import { Link } from "react-router-dom";  // Import Link from react-router-dom
+import "../style/home.css";
 import Header from "../common-components/header";
 import Footer from "../common-components/footer";
 
@@ -43,7 +44,11 @@ function Home() {
               <b className="about-us-h2">How You Can Help:</b>
               <ol className="about-us-p">
                 <li>Capture a photo of a visibly polluted beach, river, or ocean area.</li>
-                <li>Upload it using our analyzer tool to detect major pollutant indicators.<a href="/analyze-img"><button className="about-us-btn">Upload & Analyze</button></a></li>
+                <li>
+                  <Link to="/analyze-img">
+                    <button className="about-us-btn">Upload & Analyze</button>
+                  </Link>
+                </li>
                 <li>Your privacy is respected — anonymous submissions are welcome.</li>
               </ol>
             </section>
@@ -61,7 +66,9 @@ function Home() {
               <ol className="about-us-p">
                 <li>
                   Submit your article via
-                  <a href="/our-program"><button className="about-us-btn">Our Program</button></a>.
+                  <Link to="/our-program">
+                    <button className="about-us-btn">Our Program</button>
+                  </Link>
                 </li>
                 <li>Our editorial team will review your article.</li>
                 <li>Approved content will be featured on our blog.</li>
@@ -81,7 +88,9 @@ function Home() {
               <ol className="about-us-p">
                 <li>
                   Visit our
-                  <a href="/donate"><button className="about-us-btn">Donate Page</button></a>.
+                  <Link to="/donate">
+                    <button className="about-us-btn">Donate Page</button>
+                  </Link>
                 </li>
               </ol>
             </section>
@@ -99,7 +108,7 @@ function Home() {
               <p>
                 These amazingly beautiful creatures are paying a huge toll for ocean pollution. In fact, they are considered the most “toxic” marine animal in the world. Dead beluga whales are often found heavily saturated with herbicides, pesticides and other runoff-delivered chemicals. These whales are so pumped full of toxins that they must be treated as “toxic waste.” As a result of these exposures, rates of cancer are higher in Beluga Whales than any other species on land or at sea.
                 <br />
-                <a href="/distinctones" className="link1">Know More</a>
+                <Link to="/distinctones" className="link1">Know More</Link>
               </p>
             </div>
           </div>
@@ -107,7 +116,7 @@ function Home() {
           <div id="about-us" className="mid">
             <h3>
               SeaGuardian is working to protect oceans from India's challenges. <br />
-              <a href="/details" className="link2">Know More</a>
+              <Link to="/details" className="link2">Know More</Link>
             </h3>
           </div>
         </div>
@@ -116,4 +125,5 @@ function Home() {
     </>
   );
 }
+
 export default Home;

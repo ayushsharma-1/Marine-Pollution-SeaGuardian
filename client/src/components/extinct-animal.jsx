@@ -14,10 +14,14 @@ const ExtinctAnimalsTable = () => {
   useEffect(() => {
     const fetchExtinctAnimals = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/extinct-water-animals');
+        console.log("Fetching extinct animals...");
+        // Use import.meta.env for accessing environment variables in Vite
+        const response = await axios.get(import.meta.env.VITE_APP_API_URL);
+        // console.log("Response received:", response);
         setAnimals(response.data);
         setLoading(false);
       } catch (err) {
+        console.error("Error fetching data:", err);
         setError('Failed to fetch extinct animals');
         setLoading(false);
       }
@@ -26,7 +30,6 @@ const ExtinctAnimalsTable = () => {
     fetchExtinctAnimals();
   }, []);
 
-  // Sorting function
   const sortTable = (key) => {
     let direction = 'ascending';
     if (sortConfig.key === key && sortConfig.direction === 'ascending') {
@@ -35,7 +38,6 @@ const ExtinctAnimalsTable = () => {
     setSortConfig({ key, direction });
   };
 
-  // Sorting logic
   const sortedAnimals = [...animals].sort((a, b) => {
     if (sortConfig.key) {
       if (a[sortConfig.key] < b[sortConfig.key]) {
@@ -48,14 +50,13 @@ const ExtinctAnimalsTable = () => {
     return 0;
   });
 
-  // Filtering logic
   const filteredAnimals = sortedAnimals.filter(animal =>
     animal.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
     animal.biologicalName.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   if (loading) return <div>Loading...</div>;
-  if (error) return <div>{error}</div>;
+  if (error) return <div>Sorry, we couldn't fetch the data at this time. Please try again later.</div>;
 
   return (
     <>
@@ -88,20 +89,24 @@ const ExtinctAnimalsTable = () => {
             </tr>
           </thead>
           <tbody>
-            {filteredAnimals.map((animal, index) => (
-              <tr key={index}>
-                <td>{animal.name}</td>
-                <td>{animal.biologicalName}</td>
-                <td>{animal.yearExtinct}</td>
-                <td>
-                  <img
-                    src={animal.image}
-                    alt={animal.name}
-                    style={{ width: '100px', height: '100px', objectFit: 'cover' }}
-                  />
-                </td>
-              </tr>
-            ))}
+            {filteredAnimals && filteredAnimals.length > 0 ? (
+              filteredAnimals.map((animal, index) => (
+                <tr key={index}>
+                  <td>{animal.name}</td>
+                  <td>{animal.biologicalName}</td>
+                  <td>{animal.yearExtinct}</td>
+                  <td>
+                    <img
+                      src={animal.image}
+                      alt={animal.name}
+                      style={{ width: '100px', height: '100px', objectFit: 'cover' }}
+                    />
+                  </td>
+                </tr>
+              ))
+            ) : (
+              <tr><td colSpan="4">No animals found.</td></tr>
+            )}
           </tbody>
         </table>
       </div>
