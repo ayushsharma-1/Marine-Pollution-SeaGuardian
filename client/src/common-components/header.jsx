@@ -39,7 +39,7 @@ function Header() {
 
       <nav className={`header-nav ${menuOpen ? 'header-nav-active' : ''}`}>
         <ul className="header-menu">
-          <li><Link href="/about-us">About Us</Link></li>
+          <li><Link to="/about-us">About Us</Link></li>
           <li><Link to="/our-program">Our Program</Link></li>
           <li><Link to="/the-latest">The Latest</Link></li>
           <li><Link to="/analyze-img">Analyze Image</Link></li>
