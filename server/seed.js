@@ -1,3 +1,5 @@
+
+require('dotenv').config();
 const mongoose = require('mongoose');
 const ExtinctWaterAnimal = require('./models/ExtinctWaterAnimal'); // Adjust path as needed
 const extinctWaterAnimals = [
@@ -286,6 +288,7 @@ const extinctWaterAnimals = [
   ];
 
 // Seed database function
+
 const seedDatabase = async () => {
   try {
     // Remove existing data
@@ -295,17 +298,24 @@ const seedDatabase = async () => {
     await ExtinctWaterAnimal.insertMany(extinctWaterAnimals);
     
     console.log('Database seeded successfully');
-    mongoose.connection.close();
   } catch (error) {
     console.error('Error seeding database:', error);
+  } finally {
     mongoose.connection.close();
   }
 };
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/extinctAnimalsDB', {
+// Connect to MongoDB using .env
+mongoose.connect(process.env.MONGODB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
+})
+.then(() => {
+  console.log('Connected to MongoDB Atlas');
+  seedDatabase();
+})
+.catch((err) => {
+  console.error('MongoDB connection error:', err);
+})
 
-seedDatabase();
+  seedDatabase();
