@@ -43,6 +43,7 @@ function Header() {
           <li><Link to="/our-program">Our Program</Link></li>
           <li><Link to="/the-latest">The Latest</Link></li>
           <li><Link to="/analyze-img">Analyze Image</Link></li>
+          <li><Link to="/EWaste">Ewaste Tracker</Link></li>
         </ul>
         <div className="header-buttons">
           <Link to="/donate">
