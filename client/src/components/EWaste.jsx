@@ -84,7 +84,7 @@ export default function Ewaste() {
 
   return (
    
-    <div style={{color: "#f1f1f1", background: "linear-gradient(to bottom, rgba(2, 28, 199, 0.9), rgba(4,120,87,0.9))" }}>
+    <div style={{color: "#f1f1f1", background: "linear-gradient(to bottom, rgba(2, 127, 199, 0.66), rgba(4,120,87,0.9))" }}>
        <Header/>
       {/* Intro Section */}
       <section className="intro-section">
