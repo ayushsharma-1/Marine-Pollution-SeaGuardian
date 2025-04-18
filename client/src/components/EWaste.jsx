@@ -243,7 +243,7 @@ export default function Ewaste() {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+              src="https://www.youtube.com/embed/_Y2ePj3wr8M?si=4KZ1mMSyopQEZpnB"
               title="E-Waste Recycling Process"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
