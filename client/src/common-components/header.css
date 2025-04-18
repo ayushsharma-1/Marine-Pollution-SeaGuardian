@@ -33,7 +33,7 @@ header {
 
 .header-menu li a {
   text-decoration: none;
-  font-size: 17px;
+  font-size: 22px; /* Increased font size */
   font-weight: bold;
   color: #000;
   transition: 0.3s all;
@@ -172,7 +172,7 @@ header {
   }
 
   .header-menu li a {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .header-btn {
