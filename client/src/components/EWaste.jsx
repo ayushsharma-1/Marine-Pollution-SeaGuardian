@@ -84,7 +84,7 @@ export default function Ewaste() {
 
   return (
    
-    <div style={{color: "#f1f1f1", background: "linear-gradient(to bottom, rgba(2, 81, 199, 0.9), rgba(4,120,87,0.9))" }}>
+    <div style={{color: "#f1f1f1", background: "linear-gradient(to bottom, rgba(2, 28, 199, 0.9), rgba(4,120,87,0.9))" }}>
        <Header/>
       {/* Intro Section */}
       <section className="intro-section">
@@ -96,7 +96,7 @@ export default function Ewaste() {
           </p>
         <div className="w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/20 backdrop-blur-lg hover:shadow-green-300 transition-shadow duration-500">
       <img
-        src="/png-jpg/ec.png"
+        src="png-jpg/earthlogo.png"
         alt="Earth with electronics"
         className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
       />
@@ -170,7 +170,7 @@ export default function Ewaste() {
                     <YAxis />
                     <Tooltip
                       contentStyle={{
-                        backgroundColor: "rgba(255, 255, 255, 0.1)",
+                        backgroundColor: "rgba(9, 124, 226, 0.96)",
                         backdropFilter: "blur(10px)",
                         borderRadius: "8px",
                         border: "1px solid rgba(255, 255, 255, 0.2)",
@@ -243,7 +243,7 @@ export default function Ewaste() {
             <iframe
               width="100%"
               height="100%"
-              src="https://www.youtube.com/embed/_Y2ePj3wr8M?si=4KZ1mMSyopQEZpnB"
+              src="https://www.youtube.com/embed/_Y2ePj3wr8M?start=2"
               title="E-Waste Recycling Process"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
