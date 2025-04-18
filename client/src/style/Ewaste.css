@@ -107,14 +107,14 @@
     backdrop-filter: blur(2px);
   }
   .stat-card:hover {
-    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.2);
+    box-shadow: 0 4px 6px rgba(1, 19, 47, 0.2);
     transform: scale(1.05);
   }
   .stat-card .icon {
     display: flex;
     justify-content: center;
     margin-bottom: 1rem;
-    color: #93c5fd;
+    color: #3480dd;
   }
   .stat-card h3 {
     font-size: 1.25rem;

@@ -43,9 +43,15 @@ function Header() {
           <li><Link to="/our-program">Our Program</Link></li>
           <li><Link to="/the-latest">The Latest</Link></li>
           <li><Link to="/analyze-img">Analyze Image</Link></li>
-          <li><Link to="/EWaste">Ewaste Tracker</Link></li>
+          <li><Link to="/EWaste">Waste tracker</Link></li>
+       
         </ul>
         <div className="header-buttons">
+          <Link to="/Locator">
+          <button className="abc-btn abc-donate">Locator</button>
+          </Link>
+
+          
           <Link to="/donate">
             <button className="header-btn header-donate">Donate</button>
           </Link>

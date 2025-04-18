@@ -21,6 +21,7 @@ import Fisheries from '../src/components/details-animal/fishery';
 import Pollution from '../src/components/details-animal/pollution';
 import AnalyzeImg from '../src/components/take-action';
 import Ewaste from '../src/components/EWaste';
+import Locator from '../src/components/locator';
 
 function App() {
   return (
@@ -33,6 +34,8 @@ function App() {
       <Route path="/about-us" element={<About />} />
       <Route path="/analyze-img" element={<AnalyzeImg />} />
       <Route path='/EWaste' element={<Ewaste/>}/>
+
+      <Route path='/Locator' element={<Locator/>}/>
 
       {/* FAQs Ques Routes */}
       <Route path="/faq1" element={<Faq1 />} />

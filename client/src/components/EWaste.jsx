@@ -1,4 +1,6 @@
 "use client";
+import Header from "../common-components/header";
+import Footer from "../common-components/footer";
 
 import { useState, useEffect } from "react";
 import '../style/Ewaste.css'
@@ -81,8 +83,9 @@ export default function Ewaste() {
   }, []);
 
   return (
-    <div style={{ fontFamily: '"Inter", "Roboto", "Poppins", "ui-sans-serif", "system-ui"', color: "#f1f1f1", background: "linear-gradient(to bottom, rgba(2,132,199,0.9), rgba(4,120,87,0.9))" }}>
-
+   
+    <div style={{color: "#f1f1f1", background: "linear-gradient(to bottom, rgba(2, 81, 199, 0.9), rgba(4,120,87,0.9))" }}>
+       <Header/>
       {/* Intro Section */}
       <section className="intro-section">
         <div className="intro-overlay"></div>
@@ -91,12 +94,13 @@ export default function Ewaste() {
           <p>
             Transforming electronic waste into sustainable resources for a cleaner, greener future.
           </p>
-          <div className="intro-image">
-            <img
-              src="/placeholder.svg?height=256&width=256"
-              alt="Earth with electronics"
-            />
-          </div>
+        <div className="w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/20 backdrop-blur-lg hover:shadow-green-300 transition-shadow duration-500">
+      <img
+        src="/png-jpg/ec.png"
+        alt="Earth with electronics"
+        className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
+      />
+    </div>
         </div>
       </section>
 
@@ -420,6 +424,8 @@ export default function Ewaste() {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
+    
   );
 }
