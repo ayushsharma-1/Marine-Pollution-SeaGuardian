@@ -47,10 +47,10 @@ const pieChartData = [
 ];
 
 const COLORS = [
-  "rgba(76, 175, 80, 0.8)",
-  "rgba(3, 169, 244, 0.8)",
-  "rgba(2, 132, 199, 0.7)",
-  "rgba(4, 120, 87, 0.7)",
+  "rgba(36, 238, 43, 0.8)",
+  "rgba(228, 34, 34, 0.8)",
+  "rgba(113, 199, 242, 0.7)",
+  "rgba(7, 32, 25, 0.7)",
 ];
 
 export default function Ewaste() {
@@ -84,7 +84,8 @@ export default function Ewaste() {
 
   return (
    
-    <div style={{color: "#f1f1f1", background: "linear-gradient(to bottom, rgba(2, 127, 199, 0.66), rgba(4,120,87,0.9))" }}>
+   <div style={{color: "#f1f1f1", background: "linear-gradient(to bottom, rgba(2, 81, 199, 0.9), rgba(4,120,87,0.9))" }}>
+
        <Header/>
       {/* Intro Section */}
       <section className="intro-section">
@@ -165,30 +166,25 @@ export default function Ewaste() {
               <h3>E-Waste Generated (2010-2025)</h3>
               <div className="chart">
                 <ResponsiveContainer width="100%" height="100%">
-                  <LineChart data={lineChartData} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-                    <XAxis dataKey="year" />
-                    <YAxis />
-                    <Tooltip
-                      contentStyle={{
-                        backgroundColor: "rgba(9, 124, 226, 0.96)",
-                        backdropFilter: "blur(10px)",
-                        borderRadius: "8px",
-                        border: "1px solid rgba(255, 255, 255, 0.2)",
-                      }}
-                      labelStyle={{ color: "white" }}
-                      itemStyle={{ color: "white" }}
-                    />
-                    <Legend />
-                    <Line
-                      type="monotone"
-                      dataKey="value"
-                      name="Million Tonnes"
-                      stroke="rgba(76, 175, 80, 0.8)"
-                      strokeWidth={3}
-                      dot={{ fill: "rgba(76, 175, 80, 0.8)", r: 4 }}
-                      activeDot={{ r: 8, fill: "rgba(76, 175, 80, 1)" }}
-                    />
-                  </LineChart>
+                <LineChart
+  data={lineChartData}
+  margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+>
+  <XAxis dataKey="name" stroke="black" />
+  <YAxis stroke="black" />
+  <Tooltip />
+  <Legend />
+  <Line
+    type="monotone"
+    dataKey="value"
+    name="Million Tonnes"
+    stroke="rgba(0,0,0,1)"
+    strokeWidth={3}
+    dot={{ fill: "rgba(76, 175, 80, 0.8)", r: 4 }}
+    activeDot={{ r: 8, fill: "rgba(76, 175, 80, 1)" }}
+  />
+</LineChart>
+
                 </ResponsiveContainer>
               </div>
             </div>
@@ -213,12 +209,12 @@ export default function Ewaste() {
                     </Pie>
                     <Tooltip
                       contentStyle={{
-                        backgroundColor: "rgba(255, 255, 255, 0.1)",
+                        backgroundColor: "rgba(0, 0, 0, 1)",
                         backdropFilter: "blur(10px)",
                         borderRadius: "8px",
                         border: "1px solid rgba(255, 255, 255, 0.2)",
                       }}
-                      labelStyle={{ color: "white" }}
+                      labelStyle={{ color: "black" }}
                       itemStyle={{ color: "white" }}
                     />
                   </PieChart>

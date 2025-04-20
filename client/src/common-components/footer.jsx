@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { GitHub } from '@mui/icons-material';
+import GitHubIcon from '@mui/icons-material/GitHub';
 
 import "./footer.css";
 
@@ -43,8 +43,9 @@ function Footer() {
         <div className="footer-bottom">
           <small>© SeaGuardian {new Date().getFullYear()}, All rights reserved</small>
           <span className="social-links">
-         
-            <Link to="#"><img src="/svg/git1.jpg "></img></Link>
+            <a href="https://github.com/ayushsharma-1/Marine-Pollution-Control-SeaGuardian" target="_blank" rel="noopener noreferrer">
+                <GitHubIcon fontSize="small" />
+            </a>
           </span>
         </div>
       </div>
