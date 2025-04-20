@@ -209,3 +209,28 @@ header {
   box-shadow: 0 0 5px #FAEF5D, 0 0 25px #FAEF5D, 0 0 50px #FAEF5D, 0 0 100px #FAEF5D;
 }
 
+@media (max-width: 768px) {
+  .abc-btn,
+  .header-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .abc-donate {
+    box-shadow: 0 0 15px #FAEF5D;
+  }
+
+  .abc-donate:hover {
+    box-shadow: 0 0 3px #FAEF5D, 0 0 15px #FAEF5D, 0 0 30px #FAEF5D, 0 0 60px #FAEF5D;
+  }
+}
+
+@media (max-width: 480px) {
+  .abc-btn,
+  .header-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+}
