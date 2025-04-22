@@ -74,6 +74,6 @@ Feel free to fork the repository, raise issues, or submit a pull request.
 
 ---
 
-## 📫 Contact
+## 📫 Contact Us:
 
 🌐 [https://seaguardian.binit.site](https://seaguardian.binit.site)
