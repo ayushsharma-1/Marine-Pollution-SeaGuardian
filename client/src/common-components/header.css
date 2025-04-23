@@ -220,6 +220,8 @@ header {
 
   .abc-donate {
     box-shadow: 0 0 15px #FAEF5D;
+    height:40px;
+    
   }
 
   .abc-donate:hover {
@@ -230,7 +232,7 @@ header {
 @media (max-width: 480px) {
   .abc-btn,
   .header-btn {
-    padding: 6px 10px;
+    padding: 9px 12px;
     font-size: 12px;
     letter-spacing: 1px;
   }

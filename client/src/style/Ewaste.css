@@ -26,23 +26,7 @@
   margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
-@media (min-width: 768px) {
-  .intro-content h1 {
-    font-size: 4.5rem;
-  }
-}
-.intro-content p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  max-width: 48rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media (min-width: 768px) {
-  .intro-content p {
-    font-size: 1.5rem;
-  }
-}
+
 .intro-image {
   width: 100%;
   max-width: 48rem;
@@ -551,6 +535,14 @@
 }
 
 @media (min-width: 768px) {
+  .intro-content h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    padding-right: 2px;
+}
   .intro-grid {
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -599,49 +591,7 @@
 
 
 /* Add these media queries at the end of your CSS */
-@media (max-width: 768px) {
-  .intro-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-    margin-top: 1rem;
-  }
 
-  .intro-image {
-    max-width: 100%;
-    order: -1; /* Move image above text on mobile */
-    margin-bottom: 1.5rem;
-  }
-
-  .image-container {
-    max-height: none;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  }
-
-  .responsive-image {
-    height: auto;
-    min-height: 250px; /* Ensure minimum height for visibility */
-    object-position: center top; /* Adjust based on image focus area */
-  }
-
-  .intro-text {
-    padding-right: 0;
-    padding-top: 350px;
-    font-size: 1rem;
-    text-align: left;
-  }
-}
-
-/* For smaller phones */
-@media (max-width: 480px) {
-  .responsive-image {
-    min-height: 200px;
-  }
-  
-  .image-container {
-    border-radius: 8px;
-  }
-}
 /* For 1024px screens and above */
 @media (min-width: 1024px) {
   .intro-section {
