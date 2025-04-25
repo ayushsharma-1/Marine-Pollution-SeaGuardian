@@ -26,23 +26,7 @@
   margin-bottom: 1.5rem;
   text-transform: uppercase;
 }
-@media (min-width: 768px) {
-  .intro-content h1 {
-    font-size: 4.5rem;
-  }
-}
-.intro-content p {
-  font-size: 1.25rem;
-  margin-bottom: 2rem;
-  max-width: 48rem;
-  margin-left: auto;
-  margin-right: auto;
-}
-@media (min-width: 768px) {
-  .intro-content p {
-    font-size: 1.5rem;
-  }
-}
+
 .intro-image {
   width: 100%;
   max-width: 48rem;
@@ -542,4 +526,129 @@
   margin-top: 0.25rem;
   color: #86efac;
   flex-shrink: 0;
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .intro-content h1 {
+    font-size: 2.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    padding-right: 2px;
+}
+  .intro-grid {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 4rem;
+  }
+}
+
+.intro-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+.intro-image {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.image-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.image-container:hover {
+  transform: translateY(-5px);
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+/* 1024px and above adjustments */
+
+/* 768px-1024px adjustments */
+
+
+
+/* Add these media queries at the end of your CSS */
+
+/* For 1024px screens and above */
+@media (min-width: 1024px) {
+  .intro-section {
+    padding: 4rem 2rem; /* Add more vertical spacing */
+  }
+
+  .intro-grid {
+    grid-template-columns: 2fr 2.5fr; /* Give image more space */
+    gap: 5rem;
+    max-width: 1400px;
+    margin: 2rem auto;
+    align-items: center;
+  }
+
+  .intro-text {
+    font-size: 3rem; /* Optimal readable size */
+    line-height: 1.8;
+    padding-right: 1rem;
+  }
+
+  .intro-image {
+    max-width: 1000px;
+    height: auto;
+    position: relative;
+    margin-left: 100px;
+    margin-bottom: 90px;
+  }
+
+  .image-container {
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 16px 40px rgba(0,0,0,0.3);
+    max-height: 700px; /* Fixed maximum height */
+    transition: transform 0.3s ease;
+  }
+
+  .responsive-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image fills container */
+    object-position: center center;
+  }
+
+  /* Add hover effects for better interactivity */
+  .image-container:hover {
+    transform: scale(1.02) translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  }
+
+  /* Adjust heading sizes for better hierarchy */
+  .intro-content h1 {
+    font-size: 4.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .intro-content p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
 }

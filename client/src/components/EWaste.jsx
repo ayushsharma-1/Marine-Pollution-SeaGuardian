@@ -89,21 +89,37 @@ export default function Ewaste() {
        <Header/>
       {/* Intro Section */}
       <section className="intro-section">
-        <div className="intro-overlay"></div>
-        <div className="intro-content">
-          <h1>Welcome to E-Waste Management</h1>
-          <p>
-            Transforming electronic waste into sustainable resources for a cleaner, greener future.
-          </p>
-        <div className="w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/20 backdrop-blur-lg hover:shadow-green-300 transition-shadow duration-500">
-      <img
-        src="png-jpg/earthlogo.png"
-        alt="Earth with electronics"
-        className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
-      />
-    </div>
+  <div className="intro-overlay"></div>
+  <div className="intro-content">
+    <h1>Welcome to E-Waste Management</h1>
+    <div className="intro-grid">
+      <div className="intro-text">
+        <p>
+          Transforming electronic waste into sustainable resources for a cleaner, greener future. 
+          Every year, millions of tons of electronic waste end up in landfills, releasing toxic 
+          materials into our environment. Our planet is facing an unprecedented challenge with 
+          the rapid growth of discarded electronics containing harmful substances like lead, 
+          mercury, and cadmium.
+        </p>
+        <p>
+          Through proper recycling and responsible management, we can recover valuable materials 
+          like gold, silver, and copper while preventing environmental contamination. Join us in 
+          creating a sustainable circular economy for electronics.
+        </p>
+      </div>
+      <div className="intro-image">
+        <div className="image-container">
+          <img
+            src="png-jpg/copy.png"
+            alt="Electronic waste recycling process"
+            className="responsive-image"
+          />
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Animated Statistics Panel */}
       <section

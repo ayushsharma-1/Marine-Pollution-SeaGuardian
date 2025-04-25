@@ -182,6 +182,7 @@ header {
 
   .header-hamburger {
     transform: scale(0.9);
+    color: #000;
   }
 
   .header-nav {
@@ -209,3 +210,79 @@ header {
   box-shadow: 0 0 5px #FAEF5D, 0 0 25px #FAEF5D, 0 0 50px #FAEF5D, 0 0 100px #FAEF5D;
 }
 
+@media (max-width: 768px) {
+  .abc-btn,
+  .header-btn {
+    padding: 8px 12px;
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
+
+  .abc-donate {
+    box-shadow: 0 0 15px #FAEF5D;
+    height:40px;
+    
+  }
+
+  .abc-donate:hover {
+    box-shadow: 0 0 3px #FAEF5D, 0 0 15px #FAEF5D, 0 0 30px #FAEF5D, 0 0 60px #FAEF5D;
+  }
+}
+
+@media (max-width: 480px) {
+  .abc-btn,
+  .header-btn {
+    padding: 9px 12px;
+    font-size: 12px;
+    letter-spacing: 1px;
+  }
+}
+/* Existing button styles */
+.header-btn {
+  padding: 10px 20px;
+  font-size: 19px;
+  /* ... other existing styles remain the same */
+  min-width: 120px; /* Add minimum width */
+}
+
+/* Mobile-specific adjustments */
+@media screen and (max-width: 768px) {
+  .header-btn {
+    padding: 12px 15px; /* Reduced horizontal padding */
+    font-size: 16px;
+    min-width: 100px; /* Smaller minimum width for mobile */
+  }
+  
+  /* Specific login button adjustments */
+  .header-login {
+    margin-left: 2px !important; /* Reduce spacing between buttons */
+    width: auto; /* Let width adjust to content */
+  }
+}
+
+/* For even smaller screens */
+@media screen and (max-width: 480px) {
+  .header-btn {
+    padding: 10px 12px;
+    font-size: 14px;
+    min-width: 90px;
+  }
+}
+/* Updated Responsive Design */
+@media screen and (max-width: 1024px) {
+  /* ... existing styles ... */
+  
+  .header-hamburger {
+    display: block;
+    z-index: 1001;
+    color: #000; /* Add black color for all mobile views */
+  }
+}
+
+/* Phone-specific adjustments */
+@media screen and (max-width: 480px) {
+  .header-hamburger {
+    transform: scale(0.9);
+    color: #000; /* Ensure color stays black */
+  }
+}
