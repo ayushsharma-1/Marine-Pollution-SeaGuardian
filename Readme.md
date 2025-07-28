@@ -54,6 +54,7 @@
 Huge gratitude to the core team members whose efforts made SeaGuardian possible:
 - **Rudra Pratap Singh**
 - **Pranabh Dubey**
+- ** Gaurav Singh**
 
 ---
 
